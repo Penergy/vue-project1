@@ -9,13 +9,18 @@
 
 <body>
     <div id="app">
-        <app-nav></app-nav>
+        <!-- <app-nav></app-nav>
         <app-view>
             <app-sidebar></app-sidebar>
             <app-content></app-content>
-        </app-view>
-        <div id="app">
+        </app-view> -->
+        <!-- <div id="app">
             {{a}}
+        </div> -->
+        <div id="example">
+            <p>Origin message: "{{message}}"</p>
+            <p>Computed reversed message: "{{ reversedMessage }}"</p>
+            <p>method reversed message: "{{ reversedMessage1() }}"</p>
         </div>
     </div>
     <script src="scripts/vue_component.js"></script>
