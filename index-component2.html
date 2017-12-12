@@ -19,7 +19,21 @@
         <my-component-2></my-component-2>
     </div>
     <div id="example2">
-        
+        <simple-counter></simple-counter>
+        <simple-counter></simple-counter>
+        <simple-counter></simple-counter>
+    </div>
+    <div id="prop-div">
+        <child my-message="Hello World!"></child>
+    </div>
+    <div id="dynamic-prop-div">
+        <input v-model="parentMsg">
+        <br>
+        <child2 v-bind:my-message2="parentMsg"></child2>
+    </div>
+    <div id="object-prop-div">
+        <!-- <todo-item v-bind="todo"></todo-item> -->
+        <todo-item v-bind:text="todo.text" v-bind:is-complete="todo.isComplete"></todo-item>
     </div>
     <script src="scripts/vue_component2_example.js"></script>
 </body>
