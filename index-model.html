@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Example</title>
+    <!-- 因为 AJAX 库和通用工具的生态已经相当丰富，Vue 核心代码没有重复 -->
+    <!-- 提供这些功能以保持精简。这也可以让你自由选择自己更熟悉的工具。 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="styles/test.css">
+</head>
+
+<body>
+    <div id="model">
+        <input v-model="message" placeholder="edit me" />
+        <p>Message is: {{ message }}</p>
+    </div>
+    <div id="multi-line">
+        <span id="span-test"> Multiple message is:sdfsadfdsafdsafsdfdsfdsfdsafa </span>
+        <span id="span-test2"> Multiple message is: </span>
+        <p style="white-space: nowrap"> {{message}}</p>
+        <br />
+        <textarea v-model="message" placeholder="add multiple lines"></textarea>
+    </div>
+    <div id="checkbox">
+        <input type="checkbox" id="checkbox" v-model="checked"></input>
+        <label for="checkbox">{{ checked }}</label>
+    </div>
+    <div id="multi-checkbox">
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span>
+    </div>
+    <div id="radio">
+        <input type="radio" id="one" value="One" v-model="picked">
+        <label for="one">One</label>
+        <input type="radio" id="two" value="Two" v-model="picked">
+        <label for="two">Two</label>
+        <br>
+        <span>Picked: {{ picked }}</span>
+    </div>
+    <div id="list-div">
+        <select v-model="selected">
+            <option disabled value="">please select:</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+    <div id="multiple-select">
+        <select v-model="selected" multiple style="width: 50px;">
+            <option disabled value="">please select:</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+    <div id="for-selected">
+        <select v-model="selected">
+            <option v-for="option in options" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+
+    <div id="value-binding">
+        <input type="checkbox" id="bind-test" v-model="selected" v-bind:true-value="a" v-bind:false-value="b" />
+        <label for="bind-test">test</label>
+    </div>
+    <div id="lazy-div">
+        <input type="text" v-model.lazy="msg" />
+        <p>Message is : {{ msg }}</p>
+    </div>
+    <div id="number-div">
+        <input type="number" v-model.number="age" />
+        <p>Age is : {{ age }}</p>
+    </div>
+    <div id="trim-div">
+        <input type="text" v-model.trim="msg" />
+        <p>Content is : {{ msg }}</p>
+    </div>
+    <script src="scripts/vue_model_example.js"></script>
+</body>
+
+</html>
