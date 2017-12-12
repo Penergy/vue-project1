@@ -27,5 +27,8 @@ var vm1 = new Vue({
         }
     }
 })
-
-
+// #watch 是一个实例方法
+vm.$watch('a', function(oldValue, newValue){
+    console.log('old value is ' + oldValue);
+    console.log('new value is ' + newValue);
+})
