@@ -13,6 +13,7 @@
   "author": "Eason Peng",
   "license": "MIT",
   "devDependencies": {
+    "animate.css": "^3.5.2",
     "vue": "^2.5.9"
   }
 }
