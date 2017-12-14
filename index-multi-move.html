@@ -10,7 +10,55 @@
 </head>
 
 <body>
-    
+    <div id="example-1">
+        <transition>
+            <table v-if="items.length > 0">
+
+            </table>
+            <p v-else>Sorry, no itmes found.</p>
+        </transition>
+    </div>
+    <div id="no-mode-demo" class="demo">
+        <transition name="no-mode-fade">
+            <button v-bind:key="isEditing" @click="isEditing = !isEditing">
+                {{ isEditing ? 'on' : 'off' }}
+            </button>
+        </transition>
+    </div>
+    <div id="no-mode-absolute-demo" class="demo">
+        <div class="no-mode-absolute-demo-wrapper">
+            <transition name="no-mode-absolute-fade">
+                <button v-bind:key="isEditing" @click="isEditing = !isEditing">
+                    {{ isEditing ? 'on' : 'off' }}
+                </button>
+            </transition>
+        </div>
+    </div>
+    <div id="no-mode-translate-demo" class="demo">
+        <div class="no-mode-translate-demo-wrapper">
+            <transition name="no-mode-translate-fade">
+                <button v-bind:key="isEditing" @click="isEditing = !isEditing">
+                    {{ isEditing ? 'on' : 'off' }}
+                </button>
+            </transition>
+        </div>
+    </div>
+    <div id="with-mode-demo" class="demo">
+        <transition name="with-mode-fade" mode="out-in">
+            <button v-bind:key="isEditing" @click="isEditing = !isEditing">
+                {{ isEditing ? 'on' : 'off' }}
+            </button>
+        </transition>
+    </div>
+    <div id="in-out-translate-demo" class="demo">
+        <div class="in-out-translate-demo-wrapper">
+            <transition name="in-out-translate-fade" mode="in-out">
+                <button v-bind:key="isEditing" @click="isEditing = !isEditing">
+                    {{ isEditing ? 'on' : 'off' }}
+                </button>
+            </transition>
+        </div>
+    </div>
     <script src="scripts/vue_multi_move_example.js"></script>
 </body>
 
