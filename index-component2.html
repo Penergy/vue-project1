@@ -27,13 +27,10 @@
         <child my-message="Hello World!"></child>
     </div>
     <div id="dynamic-prop-div">
-        <input v-model="parentMsg">
+        <input v-model="parentMsg.text" id="text" placeholder="text">
+        <input v-model="parentMsg.isComplete" id="isComplete" placeholder="value">
         <br>
-        <child2 v-bind:my-message2="parentMsg"></child2>
-    </div>
-    <div id="object-prop-div">
-        <!-- <todo-item v-bind="todo"></todo-item> -->
-        <todo-item v-bind:text="todo.text" v-bind:is-complete="todo.isComplete"></todo-item>
+        <child2 v-bind="parentMsg" v-bind:age-value="age"></child2>
     </div>
     <script src="scripts/vue_component2_example.js"></script>
 </body>

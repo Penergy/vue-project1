@@ -25,29 +25,21 @@ var prop_vm = new Vue({
 
 Vue.component('child2', {
     // 声明 props
-    props: ['myMessage2'],
+    props: {
+        text: String,
+        isComplete: Number
+    },
     // 就像 data 一样，prop 也可以在模板中使用
     // 同样也可以在 vm 实例中通过 this.message 来使用
-    template: '<span>{{ myMessage2 }}</span>'
+    template: '<span>{{ text }} : {{ isComplete }}</span>'
 })
 var prop2_vm = new Vue({
     el: "#dynamic-prop-div",
     data: {
-        parentMsg: "testworld!"
-    }
-})
-
-Vue.component('todo-item',{
-    prop:['text','isComplete'],
-    template: '<span>{{ isComplete }}</span>'
-})
-
-var prop3_vm = new Vue({
-    el:"#object-prop-div",
-    data: {
-        todo:{
-            text: 'Learn Vue',
-            isComplete: false
-        }
+        parentMsg: {
+            text: "test",
+            isComplete: 0
+        },
+        age: 23
     }
 })
