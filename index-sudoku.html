@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Multi-Move</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <!-- <script src="scripts/flip.js"></script> -->
+    <link rel="stylesheet" href="styles/sudoku.css">
+</head>
+
+<body>
+    <div id="sudoku-demo" class="demo">
+        <h1>Lazy Sudoku</h1>
+        <p>Keep hitting the shuffle button until you win.</p>
+
+        <button @click="shuffle">
+            Shuffle
+        </button>
+        <transition-group name="cell" tag="div" class="container">
+            <div v-for="cell in cells" :key="cell.id" class="cell">
+                {{ cell.number }}
+            </div>
+        </transition-group>
+    </div>
+    <script src="scripts/vue_sudoku.js"></script>
+</body>
+
+</html>

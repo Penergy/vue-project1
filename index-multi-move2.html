@@ -6,12 +6,33 @@
     <title>Multi-Move</title>
     <script src="node_modules/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
-    <link rel="stylesheet" href="styles/test.css">
+    <link rel="stylesheet" href="styles/mov.css">
 </head>
 
 <body>
-    <div id="example-1">
+    <div id="transition-components-demo">
+        <input type="radio" id="a" value="v-a" v-model="view"> 
+        <label for="a">A</label>
+        <input type="radio" id="b" value="v-b" v-model="view">
+        <label for="b">B</label>
+        <transition name="component-fade" mode="out-in">
+            <component v-bind:is="view"></component>
+        </transition>
     </div>
+    <style>
+        .component-fade-enter-active,
+        .component-fade-leave-active {
+            transition: opacity .3s ease;
+        }
+
+        .component-fade-enter,
+        .component-fade-leave-to
+        /* .component-fade-leave-active for below version 2.1.8 */
+
+            {
+            opacity: 0;
+        }
+    </style>
     <script src="scripts/vue_multi_move2_example.js"></script>
 </body>
 
