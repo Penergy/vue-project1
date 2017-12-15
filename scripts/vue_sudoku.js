@@ -1,3 +1,6 @@
+var _ = require('lodash');
+var Vue = require('vue');
+
 new Vue({
     el: '#sudoku-demo',
     data: {
