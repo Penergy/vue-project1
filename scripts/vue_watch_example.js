@@ -48,6 +48,7 @@ var bindingVM = new Vue({
     data:{
         message: "Hello World",
         isActive: true,
-        hasError: true
+        hasError: true,
+        ok: true
     }
 })
