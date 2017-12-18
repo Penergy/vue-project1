@@ -23,6 +23,17 @@
     <div id="app">
         <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError}">{{ message }}</div>
         <my-component class="baz boo" ></my-component>
+        <template v-if="ok">
+            <h1>Title</h1>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+        </template>
+        <div v-if="Math.random() > 0.5">
+            Now you see me
+          </div>
+          <div v-else>
+            Now you don't
+          </div>
     </div>
     
     <script src="scripts/vue_watch_example.js"></script>
