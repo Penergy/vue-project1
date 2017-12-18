@@ -1,14 +1,13 @@
-var _ = require('lodash');
-var Vue = require('vue');
+var grid_number = 9;
 
 new Vue({
     el: '#sudoku-demo',
     data: {
-      cells: Array.apply(null, { length: 81 })
+      cells: Array.apply(null, { length: grid_number*grid_number })
           .map(function (_, index) { 
             return {
               id: index,
-              number: index % 9 + 1
+              number: index % grid_number + 1
           }
         })
     },
