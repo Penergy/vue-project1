@@ -7,7 +7,7 @@ new Vue({
           .map(function (_, index) { 
             return {
               id: index,
-              number: index % grid_number + 1
+              number: index
           }
         })
     },

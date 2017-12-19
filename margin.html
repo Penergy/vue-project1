@@ -5,14 +5,15 @@
     <meta charset="utf-8" />
     <title>Multi-Move</title>
     <script src="node_modules/vue/dist/vue.js"></script>
-    <!-- <script src="scripts/flip.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <link rel="stylesheet" href="styles/sudoku_customize.css">
+
 </head>
 
 <body>
     <div id="sudoku-demo" class="demo">
-        <p>Lazy Sudoku</p>
+        <!-- <p>Lazy Sudoku</p> -->
         <!-- <p>Keep hitting the shuffle button until you win.</p> -->
 
         <button @click="shuffle">
@@ -20,7 +21,7 @@
         </button>
         <transition-group name="cell" tag="div" class="container">
             <div v-for="cell in cells" :key="cell.id" class="cell" v-bind:style="{backgroundColor:cell.colorHex}">
-                {{ cell.number }}
+                <!-- {{ cell.number }} {{cell.id}} -->
             </div>
         </transition-group>
     </div>
